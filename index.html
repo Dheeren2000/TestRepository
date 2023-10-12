@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mobilab Documentation</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+  <script type="text/javascript">
+        window.addEventListener("DOMContentLoaded", function() {
+        var menuLinks = document.querySelectorAll(".sidebar a");
+
+        for (var i = 0; i < menuLinks.length; i++) {
+        menuLinks[i].addEventListener("click", function(event) {
+            event.preventDefault();
+            var target = document.querySelector(this.getAttribute("href"));
+            var offset = target.offsetTop - 80;
+
+            window.scrollTo({
+            top: offset,
+            behavior: "instant"
+            });
+        });
+        }
+    });
+  </script>
+
+  <script type="text/javascript">
+    window.addEventListener('DOMContentLoaded', function() {
+    const sections = document.querySelectorAll('.section');
+    const sidebarLinks = document.querySelectorAll('.sidebar a');
+  
+    function makeLinkActive() {
+      const scrollPosition = window.scrollY;
+  
+      sections.forEach((section, index) => {
+        const top = section.offsetTop - 250;
+  
+        if (scrollPosition >= top) {
+          sidebarLinks.forEach(link => link.classList.remove('selected'));
+          sidebarLinks[index].classList.add('selected');
+        }
+      });
+    }
+  
+    window.addEventListener('scroll', makeLinkActive);
+  });
+  </script>  
+
+  <script type="text/javascript">
+        function toggleSidebar() {
+        var sidebar = document.getElementById('sidebar');
+        sidebar.classList.toggle('closed');
+
+        var content = document.querySelector('.content');
+        content.classList.toggle('expanded');
+    }
+  </script>
+
+<script type="text/javascript">
+    function openFullScreenImg(imageSrc) {
+    var overlay = document.getElementById('fullscreen-overlay');
+    var img = document.getElementById('fullscreen-image');
+    
+    img.src = imageSrc;
+    overlay.style.display = 'block';
+    }
+    
+    function closeFullscreenImage() {
+    var overlay = document.getElementById('fullscreen-overlay');
+    overlay.style.display = 'none';
+    }
+</script>
+
+
+</head>
+<body>
+  <div class="top-navbar">
+    <div class="navbar-container">
+      <a class="navbar-brand" href="#"><img src="Mobilab_Screenshots/Jio_logo.png" alt="Logo" oncontextmenu="return false"></a>
+      <button class="toggle-button" onclick="toggleSidebar()">&#9776;</button>
+    </div>
+  </div>
+  
+  <nav class="sidebar" id="sidebar">
+    <ul>
+      <li><a href="#welcome">What is Mobilab</a></li>
+      <li><a href="#login">Login</a></li>
+      <li><a href="#access">Accessing devices</a></li>
+      <li><a href="#mydata">My Data</a></li>
+      <li><a href="#manual">Manual Session</a></li>
+      <li><a href="#automation">Automation</a></li>
+      <li><a href="#mobilabcerts">Mobilab Certificates</a></li>
+      <li><a href="#newfeatures">New Added Features</a></li>
+      <li><a href="#reports">Reports and Analytics</a></li>
+      <li><a href="#dos-donts">Do's and Don'ts</a></li>
+      <li><a href="#support">Mobilab Support</a></li>
+      <li><a href="#reference">Reference Links</a></li>
+    </ul>
+</nav>
+  
+  <div class="content">
+    <div id="welcome" class="section">
+      <div class="headcontain">
+      <div class="bordertop"></div>
+      <h3>What is Mobilab</h3>
+      <div class="borderbottom"></div>
+      </div>
+      <p class="para">Mobilab is a cloud based platform for testing mobile applications. It hosts a variety of Android and iOS devices which can be accessed from anywhere and at anytime for the testing purpose. 
+        It is a continuous testing platform where users can perform manual as well as automation testing for both apk/ipa as well as browser based applications. 
+        It integrates with automation tools like Appium and Espresso, and works with other tools such as Jenkins, Eclipse, and Android Studio.</p>
+    </div>
+    
+    <div id="login" class="section">
+      <div class="headcontain">
+        <div class="bordertop"></div>
+        <h3>Login</h3>
+        <div class="borderbottom"></div>
+      </div>
+      <p class="para"> 
+        i. &nbsp; Users can login to mobilab portal through <a href="https://mobilab.ril.com/user" target="_blank">mobilab.ril.com.</a>
+      </p>
+      <div>
+        <img src="Mobilab_Screenshots/Mobilab_Link.png" alt="baseurl" style="height: 30%;width: 700px;margin-left: 175px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+      </div>
+      <p class="para">
+        ii. &nbsp; Users will have to enter Domain ID and password.
+      </p>
+      <div>
+        <img src="Mobilab_Screenshots/SSO_Login.png" alt="sso" style="height: 350px;width: 700px;margin-left: 175px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+      </div>
+    </div>
+
+    <div id="access" class="section">
+      <div class="headcontain">
+        <div class="bordertop"></div>
+        <h3>Accessing devices</h3>
+        <div class="borderbottom"></div>
+      </div>
+
+      <div style="margin-left: 30px;margin-right: 30px;">
+        <ol type="i">
+          <li style="padding-left: 10px;">
+            <p>
+              After logging in, users will be redirected to the Start page. On the Start page, click on the devices tab.
+            </p>
+            <div>
+              <img src="Mobilab_Screenshots/viewDevices.png" alt="device" style="height: 350px;width: 700px;margin-left: 100px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+            </div> 
+          </li>
+          <li style="padding-left: 10px;">
+            <p>
+              Now, users will be redirected to the Devices page where they can see all the available devices.
+            </p>
+            <div>
+              <img src="Mobilab_Screenshots/devicesPage.PNG" alt="device" style="height: 350px;width: 700px;margin-left: 100px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <h4>Find a device</h4>
+      <div style="margin-left: 30px;margin-right: 30px;">
+        <ol type="i">
+          <li style="padding-left: 10px;">
+            <p>
+              Users can search a device in Mobilab using the Search Bar. The devices can be searched by the name or 
+              by the brand.
+            </p>
+            <div>
+              <img src="Mobilab_Screenshots/searchDevice.PNG" alt="device" style="height: 350px;width: 700px;margin-left: 100px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+            </div>
+          </li>
+          <li style="padding-left: 10px;">
+            <p>
+              Also, the users can filter the devices by OS, Brand, Screen Size, Network and Device Location using the Filter feature next to the 
+              Search Bar.
+            </p>
+            <div>
+              <img src="Mobilab_Screenshots/filterDevices.png" alt="device" style="height: 350px;width: 700px;margin-left: 100px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <h4>Get device location</h4>
+      <div style="margin-left: 30px;margin-right: 30px;">
+        <ol type="i">
+          <li style="padding-left: 10px;">
+            <p>
+              On hovering on the devices, users will get More details button. Users have to click on that button to get the device details.
+            </p>
+            <div>
+              <img src="Mobilab_Screenshots/moreDetailsButton.png" alt="device" style="height: 350px;width: 700px;margin-left: 100px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+            </div>
+          </li>
+          <li style="padding-left: 10px;">
+            <p>
+              After clicking More details button, users will get the device location along with rest of the device details.
+            </p>
+            <div>
+              <img src="Mobilab_Screenshots/deviceLocation.png" alt="device" style="height: 350px;width: 700px;margin-left: 100px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <h4>Book a device</h4>
+      <div style="margin-left: 30px;margin-right: 30px;">
+        <ol type="i">
+          <li style="padding-left: 10px;">
+            <p>
+              Users can book a device for a scheduled activity by clicking on the bookmark icon at the top right corner of the device card.
+            </p>
+            <div>
+              <img src="Mobilab_Screenshots/bookmark.png" alt="bookmark" style="height: 350px;width: 700px;margin-left: 100px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">             
+            </div>
+          </li>
+          <li style="padding-left: 10px;">
+            <p>
+              Then, users have to enter date, time and duration and type of booking, then click on the Book button. 
+              In this way the device gets booked for the mentioned date,time and duration. 
+            </p>
+            <div>
+              <img src="Mobilab_Screenshots/scheduleBook.png" alt="schedule" style="height: 350px;width: 700px;margin-left: 100px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+            </div>
+          </li>
+          <li style="padding-left: 10px;">
+            <p>
+              Users can view the booked device from "My bookings" section.  
+            </p>
+            <div>
+              <img src="Mobilab_Screenshots/myBookings.png" alt="mybooking" style="height: 350px;width: 700px;margin-left: 100px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <div id="mydata" class="section">
+      <div class="headcontain">
+        <div class="bordertop"></div>
+        <h3>My Data</h3>
+        <div class="borderbottom"></div>
+      </div>
+      <p class="para">
+        In My Data section, users can store data of various file types for eg. apk, ipa, jpeg, png etc. Users can view 
+        all the stored files by clicking on My Data from sidebar.
+      </p>
+      <div>
+        <img src="Mobilab_Screenshots/myData.PNG" alt="sso" style="height: 350px;width: 700px;margin-left: 200px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+      </div>
+
+      <h4>Upload files in My Data</h4>
+      <div style="margin-left: 30px;margin-right: 30px;">
+        <ol type="i">
+          <li style="padding-left: 10px;">
+            <p>
+              On the "My Data" Page, users have to click on the "Upload File" button, select the file (apk/ipa/jpg/png) from the local machine which is to be uploaded. The file will get uploaded to My Data
+            </p>
+            <div>
+              <img src="Mobilab_Screenshots/Upload_button.png" alt="device" style="height: 30%;width: 700px;margin-left: 100px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <h4>Resigning an iOS app for installation</h4>
+      <div style="margin-left: 30px;margin-right: 30px;">
+        <ol type="i">
+          <li style="padding-left: 10px;">
+            <p>
+              Users have to click on the three dots of the apple icon present under Action and click on "Re-sign" icon.
+            </p>
+            <div>
+              <img src="Mobilab_Screenshots/Resign_IPA.png" alt="device" style="height: 30%;width: 700px;margin-left: 100px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+            </div>
+          </li>
+          <li style="padding-left: 10px;">
+            <p>
+              Users can verify if resigned application is generated by clicking on ("+") sign.
+            </p>
+            <div>
+              <img src="Mobilab_Screenshots/resign_plus_icon.png" alt="device" style="height: 30%;width: 700px;margin-left: 100px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+              <img src="Mobilab_Screenshots/resign_confirm.png" alt="device" style="height: 30%;width: 700px;margin-left: 100px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <h4>Instrumenting apps for Image Scan and Biometric Authentication</h4>
+      <div style="margin-left: 30px;margin-right: 30px;">
+        <ol type="i">
+          <li style="padding-left: 10px;">
+            <p>
+              Users can instrument their Android/iOS application and install it on the device to test for Image Scan or Biometric Authentication.
+              For this, users have to click on the three dots on the Android/Apple icon present under Action and click on "Sensor Testing"
+            </p>
+            <div>
+              <img src="Mobilab_Screenshots/sensor_apk.png" alt="device" style="height: 30%;width: 700px;margin-left: 100px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+            </div>
+          </li>
+          <li style="padding-left: 10px;">
+            <p>
+              The APK/IPA file will get instrumented and a success notification will appear on the bottom. Once the iOS app is instrumented, users can click on ("+") icon against the app to confirm.
+            </p>
+            <div>
+              <img src="Mobilab_Screenshots/sensor_confirm.png" alt="device" style="height: 30%;width: 700px;margin-left: 100px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <div id="manual" class="section">
+      <div class="headcontain">
+        <div class="bordertop"></div>
+        <h3>Manual Session</h3>
+        <div class="borderbottom"></div>
+      </div>
+      <h4>Connecting a device</h4>
+      <div style="margin-left: 30px;margin-right: 30px;">
+        <ol type="i">
+          <li style="padding-left: 10px;">
+            <p>
+              On the Devices page, users have to click on the connect button at the bottom of the device.
+            </p>
+            <div>
+              <img src="Mobilab_Screenshots/connectDeviceButton.png" alt="device" style="height: 400px;width: 700px;margin-left: 100px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+            </div>
+          </li>
+          <li style="padding-left: 10px;">
+            <p>
+              After clicking connect button, users are redirected to the Device Session page, where they can perform various functions on the device to test their apps.
+            </p>
+            <div>
+              <img src="Mobilab_Screenshots/deviceSessionPage.PNG" alt="device" style="height: 35%;width: 700px;margin-left: 100px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <h4>Object Spy Mode</h4>
+      <div style="margin-left: 30px;margin-right: 30px;">
+        <p style="margin-left: 25px;">
+          The object spy mode enables the users to inspect the app's structure on Android/iOS device. It has a bilateral view where users can 
+          click on an element on one side and view the element details on other side. <br>
+          To open Object Spy Mode:
+        </p>
+        <ol type="i">
+          <li style="padding-left: 10px;">
+            <p>
+              On device session page, users have to select Object Spy mode from the left Pane under All Actions.
+            </p>
+            <div>
+              <img src="Mobilab_Screenshots/objectSpyButton.png" alt="device" style="height: 350px;width: 450px;margin-left: 225px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+            </div>
+          </li>
+          <li style="padding-left: 10px;">
+            <p>
+              Users have to click on the Start button to start the inspecting tool.
+            </p>
+            <div>
+              <img src="Mobilab_Screenshots/objectSpyModeStartButton.png" alt="device" style="height: 30%;width: 700px;margin-left: 100px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+            </div>
+          </li>
+          <li style="padding-left: 10px;">
+            <p>
+              Now, on left side, users can hover/click on the elements on the device screen and on right the corresponding inspection tools, elements attributes, values, etc are displayed
+            </p>
+            <div>
+              <img src="Mobilab_Screenshots/objectSpyModeElements.png" alt="device" style="height: 30%;width: 700px;margin-left: 100px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+            </div>
+          </li>
+          <li style="padding-left: 10px;">
+            <p>
+              Once the attribute and value of the element is highlighted, users have to click on copy icon to copy its information
+              to use it in the scripts.
+            </p>
+            <div>
+              <img src="Mobilab_Screenshots/copyXpath.png" alt="device" style="height: 30%;width: 700px;margin-left: 100px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+            </div>
+          </li>
+          <li style="padding-left: 10px;">
+            <p>
+              Users have to click on Exit Spy Mode or ESC button to return the device to the Default Mode.
+            </p>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <div id="automation" class="section">
+      <div class="headcontain">
+        <div class="bordertop"></div>
+        <h3>Automation</h3>
+        <div class="borderbottom"></div>
+      </div>
+      <h4>Appium</h4>
+      <h5>1. &nbsp; Capability Generator</h5>
+      <p class="para">
+        Users can generate automation capabilities and use them in their scripts to run automation. <br>
+        To generate capabilities, users have to follow the mentioned steps:
+      </p>
+      <div style="margin-left: 30px;margin-right: 30px;">
+        <ol type="i">
+          <li style="padding-left: 10px;">
+            <p>
+              On the Start page, users have to click on the Capabilities.
+            </p>
+            <div>
+              <img src="Mobilab_Screenshots/capabilitiesButton.png" alt="device" style="height: 35%;width: 700px;margin-left: 100px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+            </div>
+          </li>
+          <li style="padding-left: 10px;">
+            <p>
+              Users will be redirected to the Capability Configurator page where users have to select all the required attributes of the capabilities 
+              and thes click Generate Capabilities.
+            </p>
+            <div>
+              <img src="Mobilab_Screenshots/generateCapabilitiesButton.png" alt="device" style="height: 35%;width: 700px;margin-left: 100px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+            </div>
+          </li>
+          <li style="padding-left: 10px;">
+            <p>
+              Users can copy the generated capabilities and used them in the script for running the automation
+            </p>
+            <div>
+              <img src="Mobilab_Screenshots/copyCapabilities.png" alt="device" style="height: 35%;width: 700px;margin-left: 100px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <h5>2. &nbsp; Providing URL in Automation Testing</h5>
+      <p class="para">
+        Users will have to provide URL in automation testing as per device location in order to connect to device via automation script. <br>
+        For Example:
+      </p>
+      <div style="margin-left: 30px;margin-right: 30px;">
+        <ol type="i">
+          <li style="padding-left: 10px;"> 
+            For devices which have location as mobilab: <br>
+            driver = new AndroidDriver&lt;WebElement&gt;(new URL("<a href="https://mobilab.ril.com/appiumcloud/wd/hub" target="_blank">https://mobilab.ril.com/appiumcloud/wd/hub</a>"), capabilities);
+          </li>
+          <li style="padding-left: 10px; margin-top: 20px;">
+            For devices which have location as Mobilab-2: <br>
+            driver = new AndroidDriver&lt;WebElement&gt;(new URL("<a href="https://mobilab2.ril.com/appiumcloud/wd/hub" target="_blank">https://mobilab2.ril.com/appiumcloud/wd/hub</a>"), capabilities);
+          </li>
+        </ol>
+      </div>
+      
+      <h5>3. &nbsp; Providing URL in API Calls</h5>
+      <p class="para">
+        Users will have to provide URL in API calls as per device location. <br>
+        For Example:
+      </p>
+      <div style="margin-left: 30px;margin-right: 30px;">
+        <ol type="i">
+          <li style="padding-left: 10px;"> 
+            For mobilab: <a href="https://mobilab.ril.com/api/access" target="_blank">https://mobilab.ril.com/api/access</a>
+          </li>
+          <li style="padding-left: 10px; margin-top: 20px;">
+            For Mobilab-2: <a href="https://mobilab2.ril.com/api/access" target="_blank">https://mobilab2.ril.com/api/access</a>
+          </li>
+        </ol>
+      </div>
+
+      <h4>Espresso</h4>
+      <h5>1. &nbsp; Espresso-UI</h5>
+      <p class="para">
+        Users can execute Espresso test cases using UI through following steps:
+      </p>
+      <div style="margin-left: 30px;margin-right: 30px;">
+        <ol type="i">
+          <li style="padding-left: 10px;">
+            Users have to click on Espresso from the Start page which will redirect to the Espresso page.
+          </li>
+          <div>
+            <img src="Mobilab_Screenshots/espressoButton.png" alt="device" style="height: 35%;width: 700px;margin-left: 100px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+          </div>
+          <li style="padding-left: 10px;">
+            On the Espresso page, users have to select the TestRunner Type, Application APK, Test Cases APK and the execution time. After selecting all the required
+            fields, users have to click on Next.
+          </li>
+          <div>
+            <img src="Mobilab_Screenshots/espresso-1.png" alt="device" style="height: 30%;width: 700px;margin-left: 100px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+          </div>
+          <li style="padding-left: 10px;">
+            The users have to select the device on which test needs to be performed by clicking on the plus icon next to the device. After selecting the device, users have to click on Next button.
+          </li>
+          <div>
+            <img src="Mobilab_Screenshots/espresso-2.png" alt="device" style="height: 30%;width: 700px;margin-left: 100px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+          </div>
+          <li style="padding-left: 10px;">
+            Users have to confirm the test cycle and click on schedule button to start the execution.
+          </li>
+          <div>
+            <img src="Mobilab_Screenshots/espresso-3.png" alt="device" style="height: 30%;width: 700px;margin-left: 100px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+          </div>
+          <li style="padding-left: 10px;">
+            After scheduling the test, users can click on My active sessions on sidebar where user can see the on going session of the execution.
+          </li>
+          <div>
+            <img src="Mobilab_Screenshots/espresso_Activesession.png" alt="device" style="height: 30%;width: 700px;margin-left: 100px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+          </div>
+          <li style="padding-left: 10px;">
+            Users have to click on the Live-View icon next to session name.
+          </li>
+          <div>
+            <img src="Mobilab_Screenshots/espressoLiveViewButton.png" alt="device" style="height: 30%;width: 700px;margin-left: 100px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+          </div>
+          <li>
+            Users will be redirected to the Live-View page where they can see the live execution of the test cases.
+          </li>
+          <div>
+            <img src="Mobilab_Screenshots/espressoLiveView.PNG" alt="device" style="height: 30%;width: 700px;margin-left: 100px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+          </div>
+        </ol>
+      </div>
+
+      <h5>2. &nbsp; Espresso JAR File</h5>
+      <p class="para">
+        We have updated JAR file for Espresso testing. <br>
+        PFB the link for the same: 
+      </p>
+      <div style="margin-left: 30px;">
+        <ul>
+          <li style="padding-left: 10px;"><a href="https://rilcloud-my.sharepoint.com/personal/dheeren_chirmade_ril_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fdheeren%5Fchirmade%5Fril%5Fcom%2FDocuments%2FMobilab%2FEspresso%20JAR%20file&view=0" target="_blank">Espresso JAR file</a></li>
+        </ul>
+      </div>
+      <p class="para">
+        PFB the flags updated in JAR file:
+      </p>
+      <div style="margin-left: 30px;">
+        <ul>
+          <li style="padding-left: 10px;"># Clear Package Data after each suit/test case <br>
+            ClearPackageData = false
+          </li>
+          <li style="padding-left: 10px; margin-top: 20px;"># Grant all required permission by the app during installation <br>
+            AppPermissionGrant = false
+          </li>
+          <li style="padding-left: 10px; margin-top: 20px;"># If uses wants in each run to upload the updated apks <br>
+            #true will updated each time and false will not upload and use the recent uploaded files. <br>
+            AppUpload = true
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="mobilabcerts" class="section">
+      <div class="headcontain">
+        <div class="bordertop"></div>
+        <h3>Mobilab Certificates</h3>
+        <div class="borderbottom"></div>
+      </div>
+      <p class="para">
+        <!-- Kindly delete all the previous mobilab certificates and install the new certificates to connect to devices available on mobilab & Mobilab-2 via script for Automation testing. <br> -->
+        Users need to include the SSL certificates of mobilab and Mobilab-2 in the Java of their machine for connecting the devices via script for Automation testing. <br>
+        PFB the link for Certificates and Guidelines for trusting the same.
+      </p>
+      <p class="para">
+        <a href="https://rilcloud-my.sharepoint.com/:f:/r/personal/dheeren_chirmade_ril_com/Documents/Mobilab/Mobilab%20Certificates%20%26%20Guidelines%20to%20trust%20certificate?csf=1&web=1&e=yQTJzr" target="_blank">Mobilab Certificates and Guidelines to trust the certificate</a>
+      </p>
+    </div>
+
+    <div id="newfeatures" class="section">
+      <div class="headcontain">
+        <div class="bordertop"></div>
+        <h3>New Added Features</h3>
+        <div class="borderbottom"></div>
+      </div>
+
+      <h4>Synchronous Mode App Testing Using Follow Me feature</h4>
+      <p class="para">
+        The Follow Me feature enables the users can perform manual app tests in synchronous mode on one device by replicating the actions performed on another device. <br>
+        For using Follow Me feature, users have to instrument the app for its readiness. <br>
+        Following are steps for using Follow Me feature:
+      </p>
+      <div style="margin-left: 30px;margin-right: 30px;">
+        <ol type="i">
+          <li style="padding-left: 10px;">
+            <p>
+              Users have to click on the three dots on the Android icon present under Action and click on "Follow Me". Once,the instrumentation is completed, a success notification will appear on the bottom.
+            </p>
+            <div>
+              <img src="Mobilab_Screenshots/followButton.png" alt="device" style="height: 30%;width: 700px;margin-left: 100px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+            </div>
+          </li>
+          <li style="padding-left: 10px;">
+            <p>
+              Now, users have to go to start page and click on Follow Me. Users will be redirected to the Follow Me page.
+            </p>
+            <div>
+              <img src="Mobilab_Screenshots/followMeButton.png" alt="device" style="height: 30%;width: 700px;margin-left: 100px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+            </div>
+          </li>
+          <li>
+            On the Follow Me page, users have to follow the steps that are mentioned on the page:
+            <ul>
+              <li style="padding-left: 10px;">
+                <p>
+                  Choose the instrumented apk file
+                </p>
+              </li>
+              <li style="padding-left: 10px;">
+                <p>
+                  Next, users have to select 2 devices. Users can select 2 devices strictly within the same cluster (either mobilab or mobilab 2).
+                </p>
+              </li>
+              <li style="padding-left: 10px;">
+                <p>
+                  Now, users have to select a master device and then  click on Start Session button.
+                </p>
+              </li>
+            </ul>
+            <p>
+              Once the app is installed in both the devices, users can now manually test the app on two devices simultaneously.
+            </p>
+            <div>
+              <img src="Mobilab_Screenshots/FollowMeSessionPage.PNG" alt="device" style="height: 30%;width: 700px;margin-left: 100px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <h4>Visual AI</h4>
+      <p class="para">
+        Visual Testing, also called visual UI testing, is the answer to many prevailing problems. It verifies if the software user interface (UI) appears accurately to all users. 
+        Visual Testing ensures that each element on a web page or a web/mobile application appears in the right shape, size, and position.
+      </p>
+
+      <p class="para">
+        Performing visual testing enables us to see if each element on a web page, web/mobile app appears in the right shape, size, and position. It also checks if these elements appear and function perfectly on a variety of devices and browsers. 
+        In other words, visual testing factors in multiple environments, screen sizes, OSs, and other variables that affect the applications UI.
+      </p>
+
+      <p class="para"><b>Limitations:</b></p>
+
+      <div style="margin-left: 30px;margin-right: 30px;">
+        <ul>
+          <li style="padding-left: 10px;">
+            Both Base Image and Differentiating format should be in the same format (supported formats - PNG, JPG)
+          </li>
+          <li style="padding-left: 10px;">
+            Both Base Image and Differentiating Image resolutions have to be the same. The User will also need to ensure that the resolution of the device you perfom the test on has the same resolution as well.
+          </li>
+          <li style="padding-left: 10px;">
+            Image resolution should be same as the device resolution.
+          </li>
+        </ul>
+      </div>
+
+      <p class="para"><b>You can perform the Visual Testing using two methods:</b></p>
+
+      <div style="margin-left: 30px;margin-right: 30px;">
+        <ul>
+          <li style="padding-left: 10px;">
+            <a href="https://pcloudy.document360.io/v1/docs/using-api" target="_blank">Method 1 - Through API</a>
+          </li>
+          <li style="padding-left: 10px;">
+            <a href="https://pcloudy.document360.io/v1/docs/using-pre-build-commands" target="_blank">Method 2 - By using pre-build command</a>
+          </li>
+        </ul>
+      </div>
+
+      <h4>Transaction</h4>
+      <p class="para">
+        Users can analyze the CPU usage, memory, battery status, response times, etc. when a particular action or a series of actions are performed as part of the app usage.
+      </p>
+      <div style="margin-left: 30px;margin-right: 30px;">
+        <ol type="i">
+          <li style="padding-left: 10px;">
+            Users have to install an application on the device.
+          </li>
+          <div>
+            <img src="Mobilab_Screenshots/installApp.png" alt="device" style="height: 30%;width: 700px;margin-left: 100px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+          </div>
+          <li style="padding-left: 10px;">
+            Users have to click on the Transaction tab from top right of the device session page.
+          </li>
+          <div>
+            <img src="Mobilab_Screenshots/transactionButton.png" alt="device" style="height: 30%;width: 700px;margin-left: 100px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+          </div>
+          <li style="padding-left: 10px;">
+            Next, users have to choose the app which is to be monitored.
+          </li>
+          <div>
+            <img src="Mobilab_Screenshots/chooseappfor_transaction.png" alt="device" style="height: 30%;width: 700px;margin-left: 100px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+          </div>
+          <li style="padding-left: 10px;">
+            Users have to add a name for the transaction and then click on Start button.
+          </li>
+          <div>
+            <img src="Mobilab_Screenshots/start_Transaction.png" alt="device" style="height: 30%;width: 700px;margin-left: 100px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+          </div>
+          <li style="padding-left: 10px;">
+            After clicking Start button, users can perform the necessary action on the application as the timer on the right side goes on. Click on Stop after completing the Action.
+          </li>
+          <div>
+            <img src="Mobilab_Screenshots/transactionsession.PNG" alt="device" style="height: 30%;width: 700px;margin-left: 100px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+          </div>
+          <li style="padding-left: 10px;">
+            After the transaction ends, users have to click on View report to get detailed report of the transaction.
+          </li>
+          <div>
+            <img src="Mobilab_Screenshots/view_TranscationReport.png" alt="device" style="height: 30%;width: 700px;margin-left: 100px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+          </div>
+          <li style="padding-left: 10px;">
+            After clicking View report button, users will be redirected to the detailed report page of the transaction.
+          </li>
+          <div>
+            <img src="Mobilab_Screenshots/transactionreportpage.PNG" alt="device" style="height: 30%;width: 700px;margin-left: 100px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+          </div>
+        </ol>
+      </div>
+      
+    </div>
+
+    <div id="reports" class="section">
+      <div class="headcontain">
+        <div class="bordertop"></div>
+        <h3>Reports and Analytics</h3>
+        <div class="borderbottom"></div>
+      </div>
+      <h4>Performance Metrics during Testing Session</h4>
+      <p class="para">
+        Users can view the performance metrics for mobile application running on the device during a session.
+      </p>
+      <div style="margin-left: 30px;margin-right: 30px;">
+        <ol type="i">
+          <li style="padding-left: 10px;">
+            <p>
+              Users have to install an application on the device.
+            </p>
+          </li>
+          <li style="padding-left: 10px;">
+           <p>
+              Now, users have to select Analysis tab from right side and then choose app to start performance analysis.
+           </p>
+           <div>
+            <img src="Mobilab_Screenshots/analysisTab.png" alt="device" style="height: 30%;width: 700px;margin-left: 100px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+          </div>
+          </li>
+          <li style="padding-left: 10px;">
+           <p>
+              Once the app is selected, users will be able to see the performance metrics like memory usage, CPU usage and battery consumption.
+           </p>
+           <div>
+            <img src="Mobilab_Screenshots/appPerformanceMetrics.PNG" alt="device" style="height: 30%;width: 700px;margin-left: 100px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+          </div>
+          </li>
+        </ol>
+      </div>
+
+      <h4>Reports of completed sessions</h4>
+      <p class="para">
+        Users can view the report of a session once the testing is completed and the device is released.
+      </p>
+      <div style="margin-left: 30px;margin-right: 30px;">
+        <ol type="i">
+          <li style="padding-left: 10px;">
+            <p>
+              Users have to click on Reports from the sidebar.
+            </p>
+            <div>
+              <img src="Mobilab_Screenshots/reportsButton.png" alt="device" style="height: 30%;width: 700px;margin-left: 100px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+            </div>
+          </li>
+          <li style="padding-left: 10px;">
+            <p>
+              On All Reports page, users have to click on View Report icon under Action.
+            </p>
+            <div>
+              <img src="Mobilab_Screenshots/viewReportButton.png" alt="device" style="height: 30%;width: 700px;margin-left: 100px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+            </div>
+          </li>
+          <li style="padding-left: 10px;">
+            <p>
+              Users can now view the selected device details, Performance charts, logs, snapshots and videos for the session selected.
+            </p>
+            <div>
+              <img src="Mobilab_Screenshots/detailedReport.PNG" alt="device" style="height: 30%;width: 700px;margin-left: 100px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <h4>Sharing a test report</h4>
+      <p class="para">
+        Users can share the reports generated for the testing sessions.
+      </p>
+      <div style="margin-left: 30px;margin-right: 30px;">
+        <ol type="i">
+          <li style="padding-left: 10px;">
+            <p>
+              Users have to click on the profile icon and select Profile from the dropdown list.
+            </p>
+            <div>
+              <img src="Mobilab_Screenshots/profileOption.png" alt="device" style="height: 30%;width: 700px;margin-left: 100px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+            </div>
+          </li>
+          <li style="padding-left: 10px;">
+            <p>
+              On the profile page, users have to switch on the toggle button to enable sharable report.
+            </p>
+            <div>
+              <img src="Mobilab_Screenshots/enableReportSharing.png" alt="device" style="height: 30%;width: 700px;margin-left: 100px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+            </div>
+          </li>
+          <li style="padding-left: 10px;">
+            <p>
+              On Reports page, users have to click on the copy icon under Action. This will copy the report link which can be share through emails or 
+              other modes of communication.
+            </p>
+            <div>
+              <img src="Mobilab_Screenshots/sharableReportLink.png" alt="device" style="height: 30%;width: 700px;margin-left: 100px;margin-top: 20px;margin-bottom: 20px;border: 1px solid #000000;" onclick="openFullScreenImg(this.src)">
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <div id="dos-donts" class="section">
+      <div class="headcontain">
+        <div class="bordertop"></div>
+        <h3>Do's and Don'ts</h3>
+        <div class="borderbottom"></div>
+      </div>
+      <div>
+        <div class="instr">
+          <ul style="line-height: 2.5rem;">
+            <li>Please release device after use so that other user can use the device.</li>
+            <li>Please do not change any settings on the devices.</li>
+            <li>Please do not update the operating system on the devices.</li>
+            <li>Please do not shutdown/reboot any devices.</li>
+            <li>Please do not set any passcode on the devices.</li>
+            <li>Please do not remove or change Apple ids and Google accounts from the devices.</li>
+          </ul>
+        </div>
+      </div>
+    </div> 
+    
+    <div id="support" class="section">
+      <div class="headcontain">
+        <div class="bordertop"></div>
+        <h3>Mobilab Support Page</h3>
+        <div class="borderbottom"></div>
+      </div>
+      <p class="para">
+        Users can raise support request 
+      </p>
+      <p class="para">
+        We have created a support page for addressing the user issues that one might face while using Mobilab. The users are expected to raise a support ticket on Azure Devops using the following link. 
+        We request the users to use this link only to reach to us regarding Mobilab issues.
+      </p>
+      <p class="para">
+        <a href="https://devops.jio.com/Bond/Mobilab/_workitems/create/Support%20Request" target="_blank">Mobilab Support Page</a>
+      </p>
+    </div>
+
+    <div id="reference" class="section">
+      <div class="headcontain">
+        <div class="bordertop"></div>
+        <h3>Reference Links</h3>
+        <div class="borderbottom"></div>
+      </div>
+      <div style="margin-left: 30px;margin-right: 30px;margin-bottom: 325px;">
+        <ul>
+          <li style="padding-left: 10px;">
+            <p>pCloudy Documentation: <br>
+              <a href="https://www.pcloudy.com/docs/introduction-to-pcloudy" target="_blank">https://www.pcloudy.com/docs/introduction-to-pcloudy</a>
+            </p>
+          </li>
+          <li style="padding-left: 10px;">
+            <p>pCloudy Sample Projects: <br>
+              <a href="https://github.com/pankyopkey/pCloudy-sample-projects" target="_blank">https://github.com/pankyopkey/pCloudy-sample-projects</a>
+            </p>
+          </li>
+          <li style="padding-left: 10px;">
+            <p>API Documentation: <br>
+              <a href="https://content.pcloudy.com/apidocs/index.html" target="_blank">https://content.pcloudy.com/apidocs/index.html</a>
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="fullscreen-overlay" onclick="closeFullscreenImage()">
+        <img id="fullscreen-image" src="" alt="Fullscreen Image">
+    </div>
+  </div>
+</body>
+</html>
